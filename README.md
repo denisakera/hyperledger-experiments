@@ -1,5 +1,5 @@
-# Hyperledger experiment: Court of Venice business network
-## Hyperledger composer "translation" of "Merchant of Venice" play
+# Court of Venice 1594 business network
+## Hyperledger composer experiment in "translating" the "Merchant of Venice" play
 
 It is a business network revolving around an defaulted and then exonerrated bond between a Lender, Guarantor, and Borrower.
 
