@@ -17,11 +17,9 @@ async function approveLoan(al) { // eslint-disable-line no-unused-vars
     const participantRegistry = await getParticipantRegistry(NS + '.Notary'); // eslint-disable-line no-undef
     const approval = getCurrentParticipant(NS, 'Notary', al.getIdentifier()); // eslint-disable-line no-undef
       
-    //al.loan.status ='APPROVED';
+    al.loan.status ='APPROVED';
       
-      if (loan.approval.length === 1) {
-      loan.status = 'APPROVED';
-      
+     
       await assetRegistry.update(al.loan);
      }
      }
