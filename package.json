@@ -20,8 +20,8 @@
   "keywords": [],
   "license": "Apache 2.0",
   "repository": {
-    "type": "e.g. git",
-    "url": "URL"
+    "type": "git",
+    "url": "git+https://github.com/denisakera/hyperledger-experiments.git"
   },
   "scripts": {
     "deploy": "./scripts/deploy.sh",
