@@ -2,13 +2,13 @@
 
 ## Hyperledger composer experiment in "translating" the "Merchant of Venice" play
 
-It is a business network revolving around an defaulted and then exonerrated bond between a Lender, Guarantor, and Borrower.
+It is a business network revolving around a defaulted and then an exonerated bond between a Lender, Guarantor, and Borrower.
 
-## PARTICIPANTS
+## Participants
 
 **Lender**: Shylock gives 3000 ducats without usury for 3 months with a collateral (Merry bond).
 
-**Notary**: anonymous notary in Venice confirms the contract between Antonio (guarantor) and Shylock (lender) to give a loan to Bassanio (borrower, debtor). Approval of the bond.
+**Notary**: Anonymous notary in Venice confirms the contract between Antonio (guarantor) and Shylock (lender) to give a loan to Bassanio (borrower, debtor). Approval of the bond.
 
 **Guarantor**: Antonio guarantees to repay the loan in 3 months or give one pound of his flesh to Shylock.
 
@@ -18,10 +18,10 @@ It is a business network revolving around an defaulted and then exonerrated bond
 Holds a rule that if the bond defaults, collateral has to be executed.
 Holds a rule forbidding a collateral with Christian blood < 0.
 Triggers a law confiscating the property of a person *“conspiring against the life of a Venetian citizen - half of his wealth and property will go to the state and the other half to Antonio”*.
-Executes or exonoreates defaulted bond/collateral rule.
+Executes or exonerates a defaulted bond/collateral rule.
 Executes a rule on acquiring all assets from Lender if blood is included in a bond.
 
-## ASSETS
+## Assets
 
 **Loan**: 3000 ducats
 **Collateral**: Pound of flesh
