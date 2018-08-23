@@ -1,6 +1,9 @@
 namespace org.venice.court
 
-// STATUS of the loan: approved by a notary, defaulted if lender does not get his money back in 3 months from the guarantor, exonerated by the judge if collateral clashes with rules
+// STATUS of the loan:
+// - approved by a notary
+// - defaulted if lender does not get his money back in 3 months from the guarantor
+// - exonerated by the judge if collateral clashes with rules
 
 enum LoanStatus {
   o PENDING
@@ -9,83 +12,82 @@ enum LoanStatus {
   o EXONERATED
 }
 
-
-//LOAN asset for Bessanio that needs notary approaval and collateral from Antonio 
+// LOAN asset for Bessanio that needs notary approaval and collateral from Antonio
 
 asset Loan identified by loanId {
-o String  loanId
-//o Lender owner
-//o Integer amount
-//o String currency
-// -->Lender lender
-//-->Borrower debtor
-//-->Notary approaval
-// -->Guarantor guarantor
-// -->Collateral collateral
- o LoanStatus status default ='PENDING'
-  }
+  o String  loanId
+  // o Lender owner
+  // o Integer amount
+  // o String currency
+  // -->Lender lender
+  // -->Borrower debtor
+  // -->Notary approaval
+  // -->Guarantor guarantor
+  // -->Collateral collateral
+  o LoanStatus status default ='PENDING'
+}
 
-//STATUS of the collateral: approved by the notary, initiated by the lender if loan is not repayed, exonerated by a judge if it clashes with a rule
-  
+// STATUS of the collateral:
+// - approved by the notary
+// - initiated by the lender if loan is not repayed
+// - exonerated by a judge if it clashes with a rule
+
 enum CollateralStatus {
   o APPROVED
   o INITIATED
   o EXONERATED
 }
-  
-// CONCEPT of the rule: loan has rule that is has to be repayed in 3 months/maybe a boolean?
+
+// CONCEPT of the rule
+// - loan has rule that is has to be repayed in 3 months/maybe a boolean?
+
 concept Rule {
-  o String id 
+  o String id
   o String ruleText
 }
 
-//COLLATERAL is an asset owned by Antonio who is a guarantor of the loan
+// COLLATERAL is an asset owned by Antonio who is a guarantor of the loan
+
 asset Collateral identified by collateralId {
   o String collateralId
   -->Lender owner
-// o Integer amount
-// o String measurmentUnits
-// o String type
-//o CollateralStatus status
+  // o Integer amount
+  // o String measurmentUnits
+  // o String type
+  //o CollateralStatus status
 }
 
 // CONCEPTS related to participants
-//concept Role {
-// o String religion
-// o String profession
-//}
 
-// Participants 
-  
-  abstract participant Person identified by participantId {
+// concept Role {
+//   o String religion
+//   o String profession
+// }
+
+// Participants
+
+abstract participant Person identified by participantId {
   o String participantId
- // o Role role
-  }
-	participant Lender extends Person {
+  // o Role role
 }
 
-  participant Guarantor extends Person {
-}
+participant Lender extends Person {}
+participant Guarantor extends Person {}
+participant Borrower extends Person {}
+participant Notary extends Person {}
 
-  participant Borrower extends Person {
-}
-
-participant Notary extends Person {
-}
-
-// TRANSACTION APPROVING LOAN changes the status of the loan when notary approves, then it creates a new collateral asset and changes what borrower has. 
+// TRANSACTION APPROVING LOAN changes the status of the loan when notary approves,
+// then it creates a new collateral asset and changes what borrower has.
 
 transaction ApproveLoan {
   -->Loan loan
- -->Borrower debtor
- // -->Guarantor guarantor
- // -->Lender owner
- // -->Collateral collateral
+  -->Borrower debtor
+  // -->Guarantor guarantor
+  // -->Lender owner
+  // -->Collateral collateral
   -->Notary approval
 }
 
-  
 // TRANSACTION DEMO creates instances of participants to test the other transactions and logic
-  
-transaction Demo {
-}
+
+transaction Demo {}
